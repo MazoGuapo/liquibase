@@ -1,0 +1,462 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="santi (generated)" id="1630851613194-1">
+        <createTable tableName="department">
+            <column name="id" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-2">
+        <createTable tableName="wp_commentmeta">
+            <column autoIncrement="true" name="meta_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="comment_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_key" type="VARCHAR(255)"/>
+            <column name="meta_value" type="LONGTEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-3">
+        <createTable tableName="wp_comments">
+            <column autoIncrement="true" name="comment_ID" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="comment_post_ID" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment_author" type="TINYTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="comment_author_email" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="comment_author_url" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="comment_author_IP" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="0000-00-00 00:00:00" name="comment_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="0000-00-00 00:00:00" name="comment_date_gmt" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment_content" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="comment_karma" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="1" name="comment_approved" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="comment_agent" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="comment" name="comment_type" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="comment_parent" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="user_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-4">
+        <createTable tableName="wp_links">
+            <column autoIncrement="true" name="link_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="link_url" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="link_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="link_image" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="link_target" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="link_description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="Y" name="link_visible" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="link_owner" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="link_rating" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="0000-00-00 00:00:00" name="link_updated" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="link_rel" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="link_notes" type="MEDIUMTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="link_rss" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-5">
+        <createTable tableName="wp_options">
+            <column autoIncrement="true" name="option_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="option_name" type="VARCHAR(191)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="option_value" type="LONGTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="yes" name="autoload" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-6">
+        <createTable tableName="wp_postmeta">
+            <column autoIncrement="true" name="meta_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="post_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_key" type="VARCHAR(255)"/>
+            <column name="meta_value" type="LONGTEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-7">
+        <createTable tableName="wp_posts">
+            <column autoIncrement="true" name="ID" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="post_author" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="0000-00-00 00:00:00" name="post_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="0000-00-00 00:00:00" name="post_date_gmt" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="post_content" type="LONGTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="post_title" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="post_excerpt" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="publish" name="post_status" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="open" name="comment_status" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="open" name="ping_status" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="post_password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="post_name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="to_ping" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pinged" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="0000-00-00 00:00:00" name="post_modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="0000-00-00 00:00:00" name="post_modified_gmt" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="post_content_filtered" type="LONGTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="post_parent" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="guid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="menu_order" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="post" name="post_type" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="post_mime_type" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="comment_count" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-8">
+        <createTable tableName="wp_term_relationships">
+            <column defaultValueNumeric="0" name="object_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="term_taxonomy_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="term_order" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-9">
+        <createTable tableName="wp_term_taxonomy">
+            <column autoIncrement="true" name="term_taxonomy_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="term_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="taxonomy" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="LONGTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="parent" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="count" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-10">
+        <createTable tableName="wp_termmeta">
+            <column autoIncrement="true" name="meta_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="term_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_key" type="VARCHAR(255)"/>
+            <column name="meta_value" type="LONGTEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-11">
+        <createTable tableName="wp_terms">
+            <column autoIncrement="true" name="term_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="name" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="slug" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="term_group" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-12">
+        <createTable tableName="wp_usermeta">
+            <column autoIncrement="true" name="umeta_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValueNumeric="0" name="user_id" type="BIGINT UNSIGNED">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_key" type="VARCHAR(255)"/>
+            <column name="meta_value" type="LONGTEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-13">
+        <createTable tableName="wp_users">
+            <column autoIncrement="true" name="ID" type="BIGINT UNSIGNED">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="user_login" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="user_pass" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="user_nicename" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="user_email" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="user_url" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="0000-00-00 00:00:00" name="user_registered" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="user_activation_key" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="user_status" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="display_name" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-14">
+        <addUniqueConstraint columnNames="term_id, taxonomy" constraintName="term_id_taxonomy" tableName="wp_term_taxonomy"/>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-15">
+        <createIndex indexName="autoload" tableName="wp_options">
+            <column name="autoload"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-16">
+        <createIndex indexName="comment_approved_date_gmt" tableName="wp_comments">
+            <column name="comment_approved"/>
+            <column name="comment_date_gmt"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-17">
+        <createIndex indexName="comment_author_email" tableName="wp_comments">
+            <column name="comment_author_email"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-18">
+        <createIndex indexName="comment_date_gmt" tableName="wp_comments">
+            <column name="comment_date_gmt"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-19">
+        <createIndex indexName="comment_id" tableName="wp_commentmeta">
+            <column defaultValueNumeric="0" name="comment_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-20">
+        <createIndex indexName="comment_parent" tableName="wp_comments">
+            <column defaultValueNumeric="0" name="comment_parent"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-21">
+        <createIndex indexName="comment_post_ID" tableName="wp_comments">
+            <column defaultValueNumeric="0" name="comment_post_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-22">
+        <createIndex indexName="link_visible" tableName="wp_links">
+            <column name="link_visible"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-23">
+        <createIndex indexName="meta_key" tableName="wp_commentmeta">
+            <column name="meta_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-24">
+        <createIndex indexName="meta_key" tableName="wp_postmeta">
+            <column name="meta_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-25">
+        <createIndex indexName="meta_key" tableName="wp_termmeta">
+            <column name="meta_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-26">
+        <createIndex indexName="meta_key" tableName="wp_usermeta">
+            <column name="meta_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-27">
+        <createIndex indexName="name" tableName="wp_terms">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-28">
+        <createIndex indexName="post_author" tableName="wp_posts">
+            <column defaultValueNumeric="0" name="post_author"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-29">
+        <createIndex indexName="post_id" tableName="wp_postmeta">
+            <column defaultValueNumeric="0" name="post_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-30">
+        <createIndex indexName="post_name" tableName="wp_posts">
+            <column name="post_name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-31">
+        <createIndex indexName="post_parent" tableName="wp_posts">
+            <column defaultValueNumeric="0" name="post_parent"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-32">
+        <createIndex indexName="slug" tableName="wp_terms">
+            <column name="slug"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-33">
+        <createIndex indexName="taxonomy" tableName="wp_term_taxonomy">
+            <column name="taxonomy"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-34">
+        <createIndex indexName="term_id" tableName="wp_termmeta">
+            <column defaultValueNumeric="0" name="term_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-35">
+        <createIndex indexName="term_taxonomy_id" tableName="wp_term_relationships">
+            <column defaultValueNumeric="0" name="term_taxonomy_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-36">
+        <createIndex indexName="type_status_date" tableName="wp_posts">
+            <column name="post_type"/>
+            <column name="post_status"/>
+            <column name="post_date"/>
+            <column name="ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-37">
+        <createIndex indexName="user_email" tableName="wp_users">
+            <column name="user_email"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-38">
+        <createIndex indexName="user_id" tableName="wp_usermeta">
+            <column defaultValueNumeric="0" name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-39">
+        <createIndex indexName="user_login_key" tableName="wp_users">
+            <column name="user_login"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="santi (generated)" id="1630851613194-40">
+        <createIndex indexName="user_nicename" tableName="wp_users">
+            <column name="user_nicename"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
